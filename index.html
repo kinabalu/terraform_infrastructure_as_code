@@ -211,6 +211,32 @@ terraform {
 							<li><a href="https://www.terraform.io/docs/providers/">https://www.terraform.io/docs/providers/</a></li>
 						</ul>
 					</section>
+					<section>
+						<h2>AWS</h2>
+						<p>
+							Supports all of the various modules and services available within Amazon's service infrastructure
+						</p>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Our infrastructure</h2>
+						<p>Pull any modules into our codebase</p>
+<pre><code data-trim>
+% terraform get
+</code></pre>
+						<p>Initialize new / existing state</p>
+<pre><code data-trim>
+% terraform init --vars=dev/dev.tfvars
+</code></pre>
+					</section>
+					<section>
+						terraform.tfvars is default, but if you want to specify can use
+						<code>--var-file</code> on command line.
+<pre><code data-trim>
+% terraform plan
+</pre></code>
+					</section>
 				</section>
 				<section>
 					<h2>Import</h2>

@@ -3,8 +3,7 @@ from apistar import Include, Route, Response
 
 
 def welcome_j2d() -> Response:
-    # TODO find the translation and write a funny saying re: Bulgaria and Rakia
-    return Response({"message":"How much Rakia can one drink"}, status=200)
+    return Response({"message":u"Андрю наистина харесва ракия"}, status=200)
 
 def health_check() -> Response:
     return Response({"status": "OK"}, status=200)
