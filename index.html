@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>Code Your Infrastructure with Terraform</title>
+		<title>Infrastructure as Code with Terraform</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/black.css">
@@ -34,8 +34,8 @@
 			<div class="slides">
 				<section>
 					<img src="images/terraform-logo.png" class="noborder" width="250"/>
-					<h2>Code Your Infrastructure</h2>
-					<h6>with Terraform</h6>
+					<h2>Infrastructure As Code</h2>
+					<h6>Terraform</h6>
 					<p>
 						<small><a href="http://mysticcoders.com">Andrew Lombardi</a> / <a href="http://twitter.com/kinabalu">@kinabalu</a></small>
 					</p>
@@ -78,11 +78,23 @@
 					<p class="fragment">Other thng that makes sense</p>
 				</section>
 				<section>
+					<h2>Example Infrastructure</h2>
+					<img src="images/sample_infrastructure.png" class="noborder"/>
+				</section>
+				<section>
 					<h2>Main Config</h2>
 					<p>State</p>
 					<p>Providers</p>
 					<p>Modules</p>
 					<p>Backends</p>
+					<p>Variables</p>
+					<aside class="notes">
+						<p>State: Terraform must store state about your managed infrastructure and configuration. This state is used by Terraform to map real world resources to your configuration, keep track of metadata, and to improve performance for large infrastructures.</p>
+						<p>Providers: Exposes infrastructure as resources by multiple providers</p>
+						<p>Modules: Libraries you can include in your infrastructure</p>
+						<p>Backends: Where to load and store your state</p>
+						<p>Variables: Where to get config data</p>
+					</aside>
 				</section>
 				<section>
 					<section>
@@ -150,6 +162,18 @@ terraform {
 						<p>Encapsulates common patterns for use in multiple projects</p>
 					</section>
 					<section>
+						<h2>Module Sources</h2>
+						<ul>
+							<li>local</li>
+							<li>tf registry</li>
+							<li>github</li>
+							<li>bitbucket</li>
+							<li>git/mercurial</li>
+							<li>http</li>
+							<li>s3</li>
+						</ul>
+					</section>
+					<section>
 						<h2>RDS Example</h2>
 <pre><code data-trim>
 	module "rdp_rds_instance" {
@@ -163,8 +187,46 @@ terraform {
 	}
 </code></pre>
 					</section>
+					<section>
+						<h2>Terraform Registry</h2>
+						<p><a href="https://registry.terraform.io/">https://registry.terraform.io/</a></p>
+						<img src="images/terraform-module-registry-ss.png" />
+					</section>
+					<section>
+						<h2>Community Modules</h2>
+						<p><a href="https://github.com/terraform-community-modules">https://github.com/terraform-community-modules</a></p>
+					</section>
 				</section>
-				<section>Slide 2</section>
+				<section>
+					<section>
+						<h2>Providers</h2>
+					</section>
+					<section>
+						<h2>Available Providers</h2>
+						<ul>
+							<li>Cloud Providers</li>
+							<li>DNS</li>
+							<li>Data Storage</li>
+							<li>Code Repositories</li>
+							<li><a href="https://www.terraform.io/docs/providers/">https://www.terraform.io/docs/providers/</a></li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<h2>Import</h2>
+					<ul>
+						<li>Bring existing resources under Terraform management</li>
+						<li>Current state only</li>
+						<li>Requires building configuration manually</li>
+						<li>Future version will generate</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Alternatives to Terraform</h2>
+					<p>AWS CloudFormation</p>
+					<p>OpenStack Heat</p>
+					<p>Roll your own</p>
+				</section>
 				<section>
 					<h1>Fin</h1>
 				</section>

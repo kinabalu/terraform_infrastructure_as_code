@@ -1,0 +1,35 @@
+[
+  {
+    "name": "api",
+    "task_role_arn": "${ecs_task_role_arn}",
+    "image": "${task_repo}",
+    "cpu": 1024,
+    "memory": 1024,
+    "links": [],
+    "portMappings": [
+      {
+        "containerPort": 8080,
+        "hostPort": 8080
+      }
+    ],
+    "logConfiguration": {
+      "logDriver": "awslogs",
+      "options": {
+        "awslogs-group": "${log_group}",
+        "awslogs-region": "${region}"
+      }
+    },
+    "essential": true,
+    "entryPoint": [],
+    "command": [],
+    "environment": [
+      { "name" : "DB_NAME", "value" : "${database_name}" },
+      { "name" : "DB_HOSTNAME", "value" : "${rds_instance_address}" },
+      { "name" : "DB_USERNAME", "value" : "${database_user}" },
+      { "name" : "DB_PASSWORD", "value" : "${database_password}" },
+      { "name" : "REDIS_ADDRESS", "value" : "${cache_node_address}" }
+    ],
+    "mountPoints": [],
+    "volumesFrom": []
+  }
+]
