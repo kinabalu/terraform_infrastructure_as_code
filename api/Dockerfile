@@ -8,4 +8,4 @@ ADD . /usr/src/app/
 # Install dependencies
 RUN pip install -r requirements.txt
 
-CMD [ "apistar", "run" ]
+CMD [ "apistar", "run", "--host", "0.0.0.0" ]

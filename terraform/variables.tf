@@ -4,9 +4,9 @@ variable "aws_amis" {
   description = "AMI/Region launch config.  Defaults to ECS Optimized AWS AMI."
   type = "map"
   default = {
-    "us-east-1" = "ami-275ffe31"
-    "us-east-2" = "ami-9f9cbafa"
-    "us-west-2" = "ami-62d35c02"
+    "us-east-1" = "ami-ec33cc96"
+    "us-east-2" = "ami-34032e51"
+    "us-west-2" = "ami-29f80351"
   }
 }
 
@@ -33,7 +33,7 @@ variable "ecs_ondemand_instance_type" {
 
 variable "ecs_spot_instance_type" {
   description = "AWS instance type"
-  default = "m3.medium"
+  default = "t2.micro"
 }
 
 variable "ecs_spot_price" {

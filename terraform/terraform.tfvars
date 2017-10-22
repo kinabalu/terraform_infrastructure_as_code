@@ -8,7 +8,7 @@ subnet_1c_cidr = "10.0.2.0/24"
 name = "j2d"
 key_name = "test"
 
-ecs_ondemand_instance_type = "t2.large"
+ecs_ondemand_instance_type = "t2.micro"
 
 asg_servers_desired = 6
 asg_min_size = 0
